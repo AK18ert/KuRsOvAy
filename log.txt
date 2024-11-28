@@ -4,3 +4,7 @@ Thu Nov 14 20:54:37 2024
  - Ошибка создания сокета: Address already in use
 Thu Nov 14 20:55:59 2024
  - Ошибка создания сокета: Address already in use
+Thu Nov 14 21:02:06 2024
+ - Invalid password
+Thu Nov 14 21:02:27 2024
+ - Ошибка создания сокета: Address already in use

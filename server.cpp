@@ -10,12 +10,13 @@ using namespace std;
 server::server(string fpath, int port, string lpath)
 {
     lp = lpath;
-    const char* ip="127.0.0.1";
     userdata = getdata(lp).get(fpath);
-    sckt = start(port, ip);
+	port = port;
+	adress = "127.0.0.1";
+    sckt = start();
 }
 
-int server::start(int port, const char* address)
+int server::start()
 {
 	sockaddr_in* selfAddr = new (sockaddr_in);
     selfAddr->sin_family = AF_INET;
@@ -87,22 +88,18 @@ bool server::handling()
     uint32_t vectors_quantity;
     uint32_t vector_size;
     uint64_t vector;
-    uint64_t maxVal = numeric_limits<uint64_t>::max();
     recv(wrkr, &vectors_quantity, sizeof(vectors_quantity), 0);
     for (uint32_t i = 0; i < vectors_quantity; i++) {
-        int64_t sum = 1;
+        int64_t proiz = 1;
         recv(wrkr, &vector_size, sizeof(vector_size), 0);
         for (uint32_t j = 0; j < vector_size; j++) {
             recv(wrkr, &vector, sizeof(vector), 0);
-            if (static_cast<uint64_t>(sum*vector)/vector == static_cast<uint64_t>(sum)) {
-                sum = sum*vector;
-            } else {
-                sum = maxVal/2;
-            }
+            proiz = proiz*vector;
         }
         uint64_t answer;
 
-        answer = sum;
+        answer = proiz;
+		proiz = 1;
         send(wrkr, &answer, sizeof(answer), 0);
     }
     return true;

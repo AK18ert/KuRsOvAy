@@ -19,17 +19,19 @@
 class server
 {
 private:
+	int port;
+	const char* address;
 	std::string lp;
 	int sckt;
     int wrkr;
     int rc;
     char *buf = new char[4096];
     std::map <std::string, std::string> userdata;
+	int start(int port, const char* address);
 public:
     server(std::string fpath, int port, std::string lpath);
     bool authentication();
     bool handling();
-    int start(int port, const char* address);
 	int accepting_connection();
 	void logMessage(const std::string& message);
 };
