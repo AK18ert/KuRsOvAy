@@ -12,7 +12,7 @@ server::server(string fpath, int port, string lpath)
     lp = lpath;
     userdata = getdata(lp).get(fpath);
 	port = port;
-	adress = "127.0.0.1";
+	address = "127.0.0.1";
     sckt = start();
 }
 

@@ -27,7 +27,7 @@ private:
     int rc;
     char *buf = new char[4096];
     std::map <std::string, std::string> userdata;
-	int start(int port, const char* address);
+	int start();
 public:
     server(std::string fpath, int port, std::string lpath);
     bool authentication();

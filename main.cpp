@@ -5,8 +5,6 @@
 #include <cryptopp/hex.h>
 #include "headers/sha1hash.hpp"
 #include <string.h>
-#define CRYPTOPP_ENABLE_NAMESPACE_WEAK 1
-#include <cryptopp/md5.h>
 #include <boost/program_options.hpp>
 
 namespace po = boost::program_options;
