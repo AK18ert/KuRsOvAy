@@ -1,4 +1,10 @@
-
+/** @file server.hpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Класс, управляющий работой сервера
+ * @date 21.12.2023
+ * @copyright ИБСТ ПГУ
+ */
 
 #pragma once
 #include <cstdlib> 
@@ -15,7 +21,10 @@
 #include <limits>
 #include <iomanip>
 
-
+/**
+ * @brief Класс управления работой сервера
+ */
+ 
 class server
 {
 private:

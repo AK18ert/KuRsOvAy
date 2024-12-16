@@ -1,4 +1,10 @@
-
+/** @file sha1hash.cpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Функция хэширования и генерации соли
+ * @date 15.12.2024
+ * @copyright ИБСТ ПГУ
+ */
 #include "headers/sha1hash.hpp"
 #include <cryptopp/hex.h>
 #include <cryptopp/sha.h>

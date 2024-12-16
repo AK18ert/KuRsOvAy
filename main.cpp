@@ -1,3 +1,10 @@
+/** @file main.cpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Функция вывода справки и точка входа в программу
+ * @date 15.12.2024
+ * @copyright ИБСТ ПГУ
+ */
 #include <iostream>
 #include <string>
 #include "headers/server.hpp"
@@ -42,8 +49,8 @@ int main(int argc, const char* argv[])
         po::options_description desc("Allowed options");
         desc.add_options()
         ("help,h", "produce help message")
-        ("database-path,f", po::value<std::string>(&fpath)->default_value("database.txt"), "path to the database with clients")
-        ("log-path,l", po::value<std::string>(&lpath)->default_value("log.txt"), "path to the log file")
+        ("database-path,f", po::value<std::string>(&fpath)->default_value("/etc/vcalc.conf"), "path to the database with clients")
+        ("log-path,l", po::value<std::string>(&lpath)->default_value("/var/log/ccalc.log"), "path to the log file")
         ("port,p", po::value<int>(&port)->default_value(33333), "port");
 
         po::variables_map vm;
@@ -67,8 +74,10 @@ int main(int argc, const char* argv[])
                 srvr.handling();
         }
     } catch(log_err &e) {
+		help();
         std::cerr << e.what() << std::endl;
     } catch(std::exception &e) {
+		help();
         std::cerr << e.what() << std::endl;
         logger(lpath, e.what());
     }

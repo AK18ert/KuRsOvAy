@@ -1,3 +1,10 @@
+/** @file errorhandler.hpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Класс, обрабатывающий ошибки
+ * @date 21.12.2023
+ * @copyright ИБСТ ПГУ
+ */
 #pragma once
 #include <string>
 #include <iostream>

@@ -1,4 +1,10 @@
-
+/** @file getdata.cpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Функция чтения базы данных
+ * @date 15.12.2024
+ * @copyright ИБСТ ПГУ
+ */
 #include "headers/getdata.hpp"
 using namespace std;
 getdata::getdata(const string lpath)

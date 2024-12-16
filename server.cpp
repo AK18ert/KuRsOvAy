@@ -1,4 +1,10 @@
-
+/** @file server.cpp
+ * @author Кочегаров А. И.
+ * @version 1.0
+ * @brief Функция запуска сервера, аутентификации, приема и обработки данных, записи логов
+ * @date 15.12.2024
+ * @copyright ИБСТ ПГУ
+ */
 
 #include "headers/server.hpp"
 #include "headers/errorhandler.hpp"
