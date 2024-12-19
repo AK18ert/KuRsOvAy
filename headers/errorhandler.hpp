@@ -12,6 +12,10 @@
 #include <ctime>
 #include <chrono>
 #include <stdexcept>
+
+/**
+ * @brief Класс обработки ошибок записи в журнал
+ */
 class log_err: public std::runtime_error
 {
 public:
@@ -19,18 +23,32 @@ public:
     log_err(const char * s) : std::runtime_error(s) {}
 };
 
+/**
+ * @brief Класс обработки ошибок аутентификации
+ */
 class auth_err: public std::invalid_argument
 {
 public:
     auth_err(const std::string& s) : std::invalid_argument(s) {}
     auth_err(const char * s) : std::invalid_argument(s) {}
 };
+
+/**
+ * @brief Класс обработки ошибок чтения
+ */
 class read_err: public std::invalid_argument
 {
 public:
     read_err(const std::string& s) : std::invalid_argument(s) {}
     read_err(const char * s) : std::invalid_argument(s) {}
 };
+
+/**
+ * @brief Функция записи ошибок в журнал
+ * @param lp Путь к файлу журнала
+ * @param what Содержание ошибки
+ * @return log_s Строка с логом ошибки
+ */
 inline std::string logger(std::string lp, std::string what)
 {
     std::string log_s;

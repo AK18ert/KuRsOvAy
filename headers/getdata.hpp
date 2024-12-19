@@ -15,8 +15,8 @@ using namespace std;
 class getdata
 {
 private:
-    string lp;
+    string fp;
 public:
-    getdata(const string lpath);
-    map<string, string> get(string fpath);
+    getdata(const string fpath);
+    map<string, string> get();
 };

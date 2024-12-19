@@ -16,7 +16,7 @@ using namespace std;
 server::server(string fpath, int port, string lpath)
 {
     lp = lpath;
-    userdata = getdata(lp).get(fpath);
+    userdata = getdata(fpath).get();
 	port = port;
 	address = "127.0.0.1";
     sckt = start();
@@ -41,18 +41,6 @@ int server::start()
 	return s;
 
 }
-
-void server::logMessage(const string& message) {
-    ofstream logFile("server.log", ios::app); 
-    if (logFile.is_open()) {
-        auto now = chrono::system_clock::to_time_t(chrono::system_clock::now());
-        logFile << put_time(localtime(&now), "%Y-%m-%d %H:%M:%S") << " - " << message << endl;
-        logFile.close();
-    } else {
-        cerr << "Не удалось открыть файл для записи логов." << endl;
-    }
-}
-
 
 bool server::authentication()
 {

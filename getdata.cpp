@@ -7,15 +7,15 @@
  */
 #include "headers/getdata.hpp"
 using namespace std;
-getdata::getdata(const string lpath)
+getdata::getdata(const string fpath)
 {
-    lp = lpath;
+    fp = fpath;
 }
-map <string, string> getdata::get(string fpath)
+map <string, string> getdata::get()
 {
     map <string, string> userdata;
     string line;
-    ifstream in(fpath);
+    ifstream in(fp);
     if (in.is_open()) {
         while (getline(in, line)) {
             int position = line.find(':');

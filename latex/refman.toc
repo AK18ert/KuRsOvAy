@@ -1,0 +1,14 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Список файлов}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Файлы}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Файлы}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Файл getdata.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Подробное описание}{3}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Файл main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Подробное описание}{4}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Файл server.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Подробное описание}{5}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Файл sha1hash.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{5}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Подробное описание}{6}{subsection.2.4.1}%
+\contentsline {chapter}{{\cyrillictext \CYRP \cyrr \cyre \cyrd \cyrm \cyre \cyrt \cyrn \cyrery \cyrishrt \ \cyru \cyrk \cyra \cyrz \cyra \cyrt \cyre \cyrl \cyrsftsn }}{7}{section*.7}%
