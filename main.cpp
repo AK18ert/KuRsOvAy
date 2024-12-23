@@ -5,7 +5,7 @@
  * @date 15.12.2024
  * @copyright ИБСТ ПГУ
  */
-#include <iostream>
+ #include <iostream>
 #include <string>
 #include "headers/server.hpp"
 #include "headers/getdata.hpp"
@@ -18,19 +18,19 @@ namespace po = boost::program_options;
 
 struct {
     uint32_t p=33333;
-    std::string f="database.txt";
-    std::string l="log.txt";
+    std::string f="/etc/vcalc.conf";
+    std::string l="/var/log/ccalc.log";
     bool p_not_set()
     {
         return(p==33333);
     }
     bool b_not_set()
     {
-        return(f=="database.txt");
+        return(f=="/etc/vcalc.conf");
     }
     bool l_not_set()
     {
-        return(l=="log.txt");
+        return(l=="/var/log/ccalc.log");
     }
 } params;
 
@@ -74,10 +74,8 @@ int main(int argc, const char* argv[])
                 srvr.handling();
         }
     } catch(log_err &e) {
-		help();
         std::cerr << e.what() << std::endl;
     } catch(std::exception &e) {
-		help();
         std::cerr << e.what() << std::endl;
         logger(lpath, e.what());
     }

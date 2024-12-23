@@ -49,7 +49,7 @@ public:
  * @param what Содержание ошибки
  * @return log_s Строка с логом ошибки
  */
-inline std::string logger(std::string lp, std::string what)
+ inline std::string logger(std::string lp, std::string what)
 {
     std::string log_s;
     std::ofstream file(lp.c_str(), std::ios::app);
@@ -60,7 +60,20 @@ inline std::string logger(std::string lp, std::string what)
         file << date+log_s;
         file.close();
     } else {
-        throw log_err("Error opening log file");
+        file.close();
+		lp = "log.txt";
+		std::ofstream file(lp.c_str(), std::ios::app);
+		if (file.is_open()) {
+			cout << "Путь /var/log/ccalc.log недоступен, использован лог-файл из локальной папки" << endl;
+			std::time_t now = time(0);
+			std::string date = std::ctime(&now);
+			log_s = " - " + what + "\n";
+			file << date+log_s;
+			file.close();
+		} else {
+			file.close();
+			throw log_err("Error opening log file");
+		}
     }
     return log_s;
 }

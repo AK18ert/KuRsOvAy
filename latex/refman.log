@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.16)  19 DEC 2024 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.16)  23 DEC 2024 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1272,9 +1272,9 @@ k> </home/andrey/.texlive2023/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1440.600p
 k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (11 pages, 114522 bytes).
+Output written on refman.pdf (11 pages, 114931 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
+ 419 PDF objects out of 1000 (max. 8388607)
  186 compressed objects within 2 object streams
  34 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)

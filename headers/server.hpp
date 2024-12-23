@@ -28,10 +28,6 @@
 class server
 {
 private:
-    ///Порт подключения
-	int port;
-    ///Адрес подключения
-	const char* address;
 	///Путь к файлу с логом
 	std::string lp;
     ///Сокет
@@ -44,15 +40,16 @@ private:
     char *buf = new char[4096];
 	///Данные клиента ID:PASS
     std::map <std::string, std::string> userdata;
-    /**
+    
+
+public:
+	/**
      * @brief Функция запуска сервера и привязки порта
      * @param port Порт для приема соединения (Задается в server и берется уже из привата)
      * @param address Сетевой адрес для приема соединения (Задается в server и берется уже из привата)
      * @return sckt Сокет (Создается уже в функции)
      */
-	int start();
-
-public:
+    int start(int port, const char* address);
     /**
      * @brief Конструктор класса
      * @param fpath Путь к файлу с ID:PASS клиентов

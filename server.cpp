@@ -5,7 +5,6 @@
  * @date 15.12.2024
  * @copyright ИБСТ ПГУ
  */
-
 #include "headers/server.hpp"
 #include "headers/errorhandler.hpp"
 #include "headers/getdata.hpp"
@@ -16,13 +15,12 @@ using namespace std;
 server::server(string fpath, int port, string lpath)
 {
     lp = lpath;
-    userdata = getdata(fpath).get();
-	port = port;
-	address = "127.0.0.1";
-    sckt = start();
+    const char* ip="127.0.0.1";
+    userdata = getdata(lp).get(fpath);
+    sckt = start(port, ip);
 }
 
-int server::start()
+int server::start(int port, const char* address)
 {
 	sockaddr_in* selfAddr = new (sockaddr_in);
     selfAddr->sin_family = AF_INET;
@@ -82,19 +80,25 @@ bool server::handling()
     uint32_t vectors_quantity;
     uint32_t vector_size;
     uint64_t vector;
+    uint64_t maxVal = numeric_limits<uint64_t>::max();
     recv(wrkr, &vectors_quantity, sizeof(vectors_quantity), 0);
+    cout << "Данные полученны" << endl;
     for (uint32_t i = 0; i < vectors_quantity; i++) {
-        int64_t proiz = 1;
+        int64_t sum = 1;
         recv(wrkr, &vector_size, sizeof(vector_size), 0);
         for (uint32_t j = 0; j < vector_size; j++) {
             recv(wrkr, &vector, sizeof(vector), 0);
-            proiz = proiz*vector;
+            if (static_cast<uint64_t>(sum*vector)/vector == static_cast<uint64_t>(sum)) {
+                sum = sum*vector;
+            } else {
+                sum = maxVal/2;
+            }
         }
         uint64_t answer;
 
-        answer = proiz;
-		proiz = 1;
+        answer = sum;
         send(wrkr, &answer, sizeof(answer), 0);
+	    cout << "Результаты отправлнны" << endl;
     }
     return true;
 };
